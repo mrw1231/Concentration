@@ -21,7 +21,7 @@ const pairs = [
 ]
 
 /*----- app's state (variables) -----*/
-
+let flippedCard;
 
 /*----- cached element references -----*/
 const section = document.querySelector('section');
@@ -34,6 +34,7 @@ const section = document.querySelector('section');
 init();
 
 function init() {
+    flippedCard = [];
     shuffle(pairs);
     pairs.forEach(function(pair, idx) {
         const card = document.createElement('div');
@@ -44,15 +45,29 @@ function init() {
         back.classList = 'back';
         front.src = pairs[idx].imgSrc;
         back.src = backOfCardImg;
+        card.setAttribute('name', pair.id);
         section.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
-        function toggle() {
+        function handleClick(evt) {
             card.classList.toggle('toggleCard');
+            flippedCard.push(evt.target);
+            console.log(flippedCard)
+            render();
         };
-        card.addEventListener('click', toggle);
+        card.addEventListener('click', handleClick);
     });
 };
+
+function render() {
+    if (flippedCard.length === 2) {
+        if (flippedCard[0] === flippedCard[1]) {
+            console.log('win');
+        } else {
+            console.log('wrong');
+        }
+    }
+}
 
 function shuffle(value) {
     let index = value.length,  randomIndex;
@@ -64,4 +79,3 @@ function shuffle(value) {
         }
         return value;
 };
-
