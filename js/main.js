@@ -30,7 +30,6 @@ const section = document.querySelector('section');
 
 /*----- event listeners -----*/
 
-
 /*----- functions -----*/
 init();
 
@@ -39,26 +38,30 @@ function init() {
     pairs.forEach(function(pair, idx) {
         const card = document.createElement('div');
         const front = document.createElement('img');
-        const back = document.createElement('div');
+        const back = document.createElement('img');
         card.classList = 'card';
         front.classList = 'front';
         back.classList = 'back';
         front.src = pairs[idx].imgSrc;
+        back.src = backOfCardImg;
         section.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
+        function toggle() {
+            card.classList.toggle('toggleCard');
+        };
+        card.addEventListener('click', toggle);
     });
 };
 
 function shuffle(value) {
     let index = value.length,  randomIndex;
     while (index != 0) {
-      randomIndex = Math.floor(Math.random() * index);
-      index--;
-      [value[index], value[randomIndex]] = [
-        value[randomIndex], value[index]];
-    }
-    return value;
-  }
-
+        randomIndex = Math.floor(Math.random() * index);
+        index--;
+        [value[index], value[randomIndex]] = [
+            value[randomIndex], value[index]];
+        }
+        return value;
+};
 
