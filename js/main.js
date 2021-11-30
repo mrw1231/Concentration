@@ -24,7 +24,10 @@ const pairs = [
 
 
 /*----- cached element references -----*/
+const cards = document.querySelectorAll('td');
 const section = document.querySelector('section');
+
+// const section = document.querySelector('section');
 
 /*----- event listeners -----*/
 
