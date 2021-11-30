@@ -24,7 +24,6 @@ const pairs = [
 
 
 /*----- cached element references -----*/
-const cards = document.querySelectorAll('td');
 const section = document.querySelector('section');
 
 // const section = document.querySelector('section');
@@ -49,12 +48,7 @@ function init() {
         card.appendChild(front);
         card.appendChild(back);
     });
-    render();
 };
-  
- function render() {
-    
- } 
 
 function shuffle(value) {
     let index = value.length,  randomIndex;
