@@ -36,7 +36,7 @@ const section = document.querySelector('section');
 //   console.log('hello');
 // });
 
-// document.querySelector('button').addEventListener('click', reset);
+document.querySelector('button').addEventListener('click', reset);
 
 
 /*----- functions -----*/
@@ -106,6 +106,14 @@ function checkForMatch() {
         lockBoard = false;
       }, 1000);
     }
+}
+
+function reset (evt) {
+    let goAway = document.querySelectorAll('div');
+    goAway.forEach(function(away) {
+        away.remove();
+    })
+    init();
 }
 
 
