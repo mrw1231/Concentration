@@ -25,3 +25,5 @@ In my version, I have chosen to use dogs as my theme. The back of the cards are 
 This was my first time constructing a game. I mainly focused on its functionality. I plan to keep working and improve it's look and features.
 
 I would like to focus more on the CSS and overall look and effects of the page.
+
+I would also like to make it work on a mobile platform. 
