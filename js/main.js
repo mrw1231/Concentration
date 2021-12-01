@@ -36,7 +36,7 @@ const section = document.querySelector('section');
 //   console.log('hello');
 // });
 
-document.querySelector('button').addEventListener('click', init);
+// document.querySelector('button').addEventListener('click', reset);
 
 
 /*----- functions -----*/
